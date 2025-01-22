@@ -23,7 +23,14 @@ export default function RootLayout({children}: Readonly<{
   return (
     <html lang="en" dir="rtl" suppressHydrationWarning>
     <body
-      className={`${cairo.variable} antialiased max-w-[1440px] m-auto dark:bg-amber-600 bg-amber-500`}
+      className={`${cairo.variable}
+       antialiased
+       flex flex-col
+       min-h-screen w-full max-w-[1440px]
+       bg-gradient-to-tl from-mediumLight to-mediumDark dark:from-light dark:to-dark 
+       m-auto
+       overflow-x-hidden
+       `}
     >
     <Provider>
       <Header/>
