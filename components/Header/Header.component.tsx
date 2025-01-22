@@ -1,20 +1,24 @@
 import { FC } from 'react';
-import { Box, Flex, Heading, Link } from "@chakra-ui/react";
+import { Flex, Heading, Link } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 import { ColorModeButton } from "@/components/ui/color-mode";
+import colors from "@/config/colors";
+import { Button } from "@/components/ui/button";
 
 const Header: FC = () => {
   return (
     <Flex
-      mt="30px"
+      as="header"
+      fontSize="20px"
+      fontWeight="semibold"
       px="30px"
       w="full"
       align="center"
       justify="space-between"
       borderBottom="1px solid gray.200"
-      as="header"
     >
       <Link
+        color={{_hover: colors.light}}
         display="flex"
         href="#"
         gap={3}
@@ -24,27 +28,26 @@ const Header: FC = () => {
         <Icon icon="mdi:education-outline" width="60" height="60"/>
         <Heading fontSize="3xl" letterSpacing="tight">تحضير زون</Heading>
       </Link>
-      <Flex>
-        <ul className="flex gap-4">
-          <li>
-            <Link href="#">المعلومات</Link>
-          </li>
-          <li>
-            <Link href="#">التواصل</Link>
-          </li>
-          <li>
-            <Link href="#">المساعدة</Link>
-          </li>
-          <li>
-            <Link href="#">تسجيل الدخول</Link>
-          </li>
-          <li>
-            <Link href="#">التسجيل</Link>
-          </li>
-        </ul>
+      <Flex as="ul" gap={4}>
+        <li>
+          <Link color={{_hover: colors.light}} href="#">المعلومات</Link>
+        </li>
+        <li>
+          <Link color={{_hover: colors.light}} href="#">التواصل</Link>
+        </li>
+        <li>
+          <Link color={{_hover: colors.light}} href="#">المساعدة</Link>
+        </li>
       </Flex>
-      <ColorModeButton/>
-
+      <Flex gap={4}>
+        <Link color={{_hover: colors.light}} href="#">
+          <Button p={2} border="white" borderWidth={2}>
+            تسجيل الدخول
+          </Button>
+        </Link>
+        <Link color={{_hover: colors.light}} href="#">التسجيل</Link>
+        <ColorModeButton color={{_hover: colors.light}}/>
+      </Flex>
     </Flex>
   )
 }
