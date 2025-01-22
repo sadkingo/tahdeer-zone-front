@@ -10,7 +10,7 @@ const cairo = Cairo({
   subsets: ["latin"],
 })
 
-// TODO: add facebook support
+// TODO: add social-media support
 export const metadata: Metadata = {
   title: "Tahdeer Zone",
   description: "دروس ملخصات امتحانات بسهولة",
