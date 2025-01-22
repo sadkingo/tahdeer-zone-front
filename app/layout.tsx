@@ -1,9 +1,10 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
-import "./globals.css";
+
 import { Provider } from "@/components/ui/provider";
 import Header from "@/components/Header";
-
+import ContactStrap from "@/components/contact-strap/ContactStrap.component";
 
 const cairo = Cairo({
   variable: "--font-cairo",
