@@ -18,6 +18,7 @@ export default {
         wiggle: 'wiggle 1.5s ease-in-out infinite',
       },
       colors: {
+        accent: "#F5E876",
         dark: "#c37409",
         mediumDark: "#d8840a",
         medium: "#f49e0b",
