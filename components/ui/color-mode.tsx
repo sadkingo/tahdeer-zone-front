@@ -7,11 +7,11 @@ import type { ThemeProviderProps } from "next-themes"
 import * as React from "react"
 import { LuMoon, LuSun } from "react-icons/lu"
 
-export interface ColorModeProviderProps extends ThemeProviderProps {}
+export type ColorModeProviderProps = ThemeProviderProps;
 
 export function ColorModeProvider(props: ColorModeProviderProps) {
   return (
-    <ThemeProvider attribute="class" disableTransitionOnChange {...props} />
+    <ThemeProvider attribute="class" {...props} />
   )
 }
 
@@ -24,7 +24,7 @@ export interface UseColorModeReturn {
 }
 
 export function useColorMode(): UseColorModeReturn {
-  const { resolvedTheme, setTheme } = useTheme()
+  const {resolvedTheme, setTheme} = useTheme()
   const toggleColorMode = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light")
   }
@@ -36,39 +36,39 @@ export function useColorMode(): UseColorModeReturn {
 }
 
 export function useColorModeValue<T>(light: T, dark: T) {
-  const { colorMode } = useColorMode()
+  const {colorMode} = useColorMode()
   return colorMode === "dark" ? dark : light
 }
 
 export function ColorModeIcon() {
-  const { colorMode } = useColorMode()
-  return colorMode === "dark" ? <LuMoon /> : <LuSun />
+  const {colorMode} = useColorMode()
+  return colorMode === "dark" ? <LuMoon/> : <LuSun/>
 }
 
-interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> {}
+type ColorModeButtonProps = Omit<IconButtonProps, "aria-label">;
 
 export const ColorModeButton = React.forwardRef<
   HTMLButtonElement,
   ColorModeButtonProps
 >(function ColorModeButton(props, ref) {
-  const { toggleColorMode } = useColorMode()
+  const {toggleColorMode} = useColorMode()
   return (
-    <ClientOnly fallback={<Skeleton boxSize="8" />}>
+    <ClientOnly fallback={<Skeleton boxSize="30px"/>}>
       <IconButton
         onClick={toggleColorMode}
         variant="ghost"
         aria-label="Toggle color mode"
-        size="sm"
+        size="xl"
         ref={ref}
         {...props}
         css={{
           _icon: {
-            width: "5",
-            height: "5",
+            width: "30px",
+            height: "30px",
           },
         }}
       >
-        <ColorModeIcon />
+        <ColorModeIcon/>
       </IconButton>
     </ClientOnly>
   )
