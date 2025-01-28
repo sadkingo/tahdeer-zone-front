@@ -1,98 +1,99 @@
-import { Box, Card, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import { Button } from "@/components/ui/button";
-import { Icon } from "@iconify/react";
+"use client"
+import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import colors from "@/config/colors";
+import DotedShape from "../components/doted-shape";
+import { Button } from "@/components/ui/button";
+import ArrowShape from "@/components/arrow-shape";
+import Carousel from "@/components/carousel";
 
 export default function Home() {
-  const triangleHeight = '400px'
   return (
-    <Flex
+    <Stack
+      flexDir="column" justifyContent="space-between"
+      color="bg.inverted"
       as="main"
       flex={1}
-      maxH="screen"
       pos="relative"
     >
-      <Flex
-        px={12}
-        h="full" w="full"
-        overflow="hidden"
-        justifyContent="space-between"
-      >
-        <Stack alignItems="center" gap={16} py={32}>
-          <Heading fontSize={30} fontWeight={700}>
-            كل شئ في منصة واحدة
-          </Heading>
-          <Heading fontSize={72} fontWeight={900}>
-            تحضير زون
-          </Heading>
-          <Text fontSize={20}>
-            مجاني 100% و يحتوي على كل ما تحتاج لتحقيق اعلى الدرجات.
-          </Text>
-          <Button fontSize={32} w="fit" py={8} px={16} bg={{base: colors.mediumDark, _hover: colors.medium}}>سجل
-            الآن</Button>
-        </Stack>
-        <Icon
-          className="opacity-45 absolute end-0 w-fit h-fit min-w-96 max-w-[50%] min-h-[100%]"
-          icon="mdi:education-outline"
-        />
-      </Flex>
-      {renderBottomHeroSection()}
-    </Flex>
+      {renderHeading()}
+      <Stack gap={0} as="section">
+        <Carousel reverseDirection/>
+        <Carousel/>
+      </Stack>
+    </Stack>
   );
 
-  function renderBottomHeroSection() {
+  function renderHeading() {
     return (
-      <Flex
-        pos="absolute" bottom={0}
-        h={triangleHeight} w="full"
-        justifyContent="center"
-      >
-        <Box pos="relative" w="full">
-          <Box
-            pos="absolute"
-            bottom={0}
-            h={triangleHeight} w="full"
-            shadow="lg"
-            bg={{_light: colors.mediumLight, _dark: colors.medium}}
-            style={{clipPath: "polygon(0 0, 0 100%, 125% 100%)"}}/>
-          <Flex
-            gap={16}
-            pos="absolute" left="10%" top="10%"
+      <Box mx="auto" pos="relative" w="full" h="320px">
+        <Flex
+          w="full"
+          gap={12}
+          flexDir="column"
+          pos="relative"
+          // pos="absolute" insetEnd="50%" transform="translateX(50%)"
+          // _rtl={{transform: "translateX(-50%)"}}
+          textAlign="center"
+          p={0}
+        >
+          {renderShapes()}
+          <Heading
+            color={colors.accent}
+            fontSize="6xl" fontWeight="bold"
           >
-            {renderUserTypeCard("مؤسسة", "تريد اضافة مؤسستك معنا؟", "mdi:company")}
-            {renderUserTypeCard("مستخدم", "اطلع على المحتوى الدراسي")}
-          </Flex>
-        </Box>
-      </Flex>
-    )
+            المُجِد
+          </Heading>
+          <Box>
+            <Text fontSize="2xl" fontWeight="semibold">
+              مكانك الأول للدراسة
+            </Text>
+            <Text m="auto" maxW="350px" opacity={0.9}>
+              نوفر لك بيئة تعليمية مثالية ومصادر متنوعة تساعدك على تحقيق أهدافك الأكاديمية وتطوير مهاراتك.
+              مع المُجِد، النجاح يصبح أقرب مما تتخيل. 🌟
+            </Text>
+            <Box pos="relative">
+              <ArrowShape
+                className="
+                absolute -z-10 inset-x-[calc(50%-290px)] -inset-y-32 max-md:-inset-y-14 max-md:inset-x-[calc(50%-215px)]
+                dark:text-white text-black
+                w-52 h-52 max-md:w-32 max-md:h-32"
+              />
+              <Button
+                rounded="16px"
+                px="40px" py="30px" mt={8}
+                bg={colors.accent}
+                fontWeight="bold" color="black" fontSize="20px"
+              >
+                <Text>سجل الآن</Text>
+              </Button>
+            </Box>
+          </Box>
+        </Flex>
+      </Box>)
   }
 
-  function renderUserTypeCard(type: string, description: string, icon = "mdi:user") {
-    return <Card.Root
-      bg="transparent"
-      shadow={"0 4px 60px 10px rgba(0, 0, 0, 0.05)"}
-      rounded="4xl"
-      width="200px"
-    >
-      <Card.Body
-        roundedTop="4xl"
-        p={4} gap="2"
-        alignItems="center"
-        bg={colors.medium}
-      >
-        <Icon icon={icon} width="60" height="60"/>
-        <Card.Title fontSize="lg" fontWeight="bold" m="2">{type}؟</Card.Title>
-        <Card.Description color="white" textAlign="center">
-          {description}
-        </Card.Description>
-      </Card.Body>
-      <Card.Footer
-        roundedBottom="4xl"
-        justifyContent="center"
-        bg={{base: colors.mediumDark, _hover: colors.dark}}
-      >
-        <Button m={3}>إنضم إلينا الآن</Button>
-      </Card.Footer>
-    </Card.Root>
+  function renderShapes() {
+    return (
+      <>
+        <DotedShape
+          height={100}
+          width={100}
+          className="
+          rotate-45
+          absolute inset-x-[calc(50%-175px)] -z-10
+         dark:text-gray-600 text-gray-300
+          text-5xl"
+        />
+        <DotedShape
+          height={100}
+          width={100}
+          className="
+         rotate-45
+         absolute inset-y-[50%] inset-x-[calc(50%+120px)] -z-10
+         dark:text-gray-600 text-gray-300
+         text-5xl"
+        />
+      </>
+    )
   }
 }
