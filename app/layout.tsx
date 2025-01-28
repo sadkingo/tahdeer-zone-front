@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 
 import { Provider } from "@/components/ui/provider";
-import Header from "@/components/Header";
-import ContactStrap from "@/components/contact-strap/ContactStrap.component";
+import Header from "../components/header";
+import { Toaster } from "@/components/ui/toaster";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -26,16 +26,15 @@ export default function RootLayout({children}: Readonly<{
       className={`${cairo.variable}
        antialiased
        flex flex-col
-       min-h-screen w-full max-w-[1440px]
-       bg-gradient-to-tl from-mediumLight to-mediumDark dark:from-light dark:to-dark 
+       min-h-screen w-full
        m-auto
        overflow-x-hidden
        `}
     >
     <Provider>
-      <ContactStrap/>
       <Header/>
       {children}
+      <Toaster/>
     </Provider>
     </body>
     </html>
