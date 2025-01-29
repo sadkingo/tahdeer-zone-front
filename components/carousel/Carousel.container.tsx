@@ -1,9 +1,17 @@
 import { FC } from 'react';
 import Carousel from "./Carousel.component";
 
-const CarouselContainer: FC<{ className?: string, reverseDirection?: boolean }> = (props) => {
+const carouselImages = Array.from({length: 19})
+  .map((_, index) => `/images/carousel/carousel-img-${index + 1}.jpg`);
+
+const CarouselContainer: FC<
+  {
+    className?: string,
+    reverseDirection?: boolean
+  }
+> = (props) => {
   return (
-    <Carousel {...props}/>
+    <Carousel carouselImages={carouselImages} {...props}/>
   )
 }
 

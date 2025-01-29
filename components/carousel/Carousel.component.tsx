@@ -1,20 +1,20 @@
 "use client";
 import { FC } from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
 import sliderPlaceHolderImage from "@/public/images/carousel-placeholder.png"
-import Image from "next/image";
 
 const Carousel: FC<
-  { className?: string, reverseDirection?: boolean }> =
+  { className?: string, reverseDirection?: boolean, carouselImages?: string[] }> =
   ({
      className = "",
      reverseDirection = false,
+     carouselImages = [sliderPlaceHolderImage],
    }) => {
     return (
       <Swiper
@@ -37,19 +37,10 @@ const Carousel: FC<
         }}
         className={`w-full h-full bg-black dark:bg-white ${className}`}
       >
-        {[
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-          sliderPlaceHolderImage,
-        ].map((_, index) =>
-          <SwiperSlide className="min-w-52" key={index}>
-            <Image className="h-52 w-full rounded-xl p-2" draggable={false} src={sliderPlaceHolderImage}
-                   alt="Slider Placeholder"/>
+        {carouselImages.map((image, index) =>
+          <SwiperSlide className="min-w-52 min-h-52" key={index}>
+            <Image className="h-52 w-full rounded-xl p-2" draggable={false} src={image || sliderPlaceHolderImage}
+                   alt="Slider Placeholder" fill/>
           </SwiperSlide>)
         }
       </Swiper>
