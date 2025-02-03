@@ -17,8 +17,7 @@ export default function Home() {
     >
       {renderHeading()}
       <Stack gap={0} as="section">
-        <Carousel reverseDirection/>
-        <Carousel/>
+        <Carousel className="h-[400px]"/>
       </Stack>
     </Stack>
   );
