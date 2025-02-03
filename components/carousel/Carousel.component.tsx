@@ -10,32 +10,34 @@ import "swiper/css/autoplay";
 import sliderPlaceHolderImage from "@/public/images/carousel-placeholder.png"
 
 const Carousel: FC<
-  { className?: string, reverseDirection?: boolean, carouselImages?: string[] }> =
+  { className?: string, carouselImages?: string[] }> =
   ({
      className = "",
-     reverseDirection = false,
      carouselImages = [sliderPlaceHolderImage],
    }) => {
     return (
       <Swiper
         dir="ltr"
         modules={[Autoplay]}
-        spaceBetween={10}
+        spaceBetween={0}
         speed={10000}
         allowTouchMove={false}
         slidesPerView={2}
         loop={true}
         pagination={{clickable: true, type: "bullets"}}
-        autoplay={{delay: 0, disableOnInteraction: false, reverseDirection}}
+        autoplay={{delay: 0, disableOnInteraction: false}}
         breakpoints={{
           0: {
             slidesPerView: 2,
           },
           640: {
-            slidesPerView: 5,
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 7,
           },
         }}
-        className={`w-full h-full bg-black dark:bg-white ${className}`}
+        className={`w-full h-full ${className}`}
       >
         {carouselImages.map((image, index) =>
           <SwiperSlide className="min-w-52 min-h-52" key={index}>

@@ -11,10 +11,6 @@ const CarouselContainer: FC<
 > = (props) => {
   const carouselImages = Array.from({length: NUMBER_OF_IMAGES - 1})
     .map((_, index) => {
-      if (props.reverseDirection) {
-        const reversedIndex = ((12 - index + NUMBER_OF_IMAGES - 1) % NUMBER_OF_IMAGES) + 1;
-        return `/images/carousel/carousel-img-${reversedIndex}.jpg`;
-      }
       return `/images/carousel/carousel-img-${index + 1}.jpg`
     });
 
