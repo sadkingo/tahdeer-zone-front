@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
-import colors from "@/config/colors";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdGTranslate } from "react-icons/md";
 import { ColorModeButton } from "@/components/ui/color-mode";
@@ -39,6 +39,7 @@ const Header: FC = () => {
         <MdGTranslate size="30"/>
         <ColorModeButton/>
         <Button
+          mdDown={{display: "none"}}
           rounded="16px"
           px="40px" py="30px"
           bg={colors.accent}
@@ -47,6 +48,7 @@ const Header: FC = () => {
         >
           <Text>سجل الآن</Text>
         </Button>
+        <RxHamburgerMenu className="lg:hidden flex w-12 h-12"/>
       </Flex>
     </Flex>
   )
