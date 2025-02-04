@@ -9,6 +9,7 @@ import { ColorModeButton } from "@/components/ui/color-mode";
 const Header: FC = () => {
   return (
     <Flex
+      pos="absolute" top="0" left="0" right="0" zIndex={99}
       px={{base: "80px", mdDown: "30px"}} py="56px"
       justifyContent="space-between"
       alignItems="center"
