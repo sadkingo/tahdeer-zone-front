@@ -5,6 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdGTranslate } from "react-icons/md";
 import { ColorModeButton } from "@/components/ui/color-mode";
+import colors from "@/config/colors";
 
 const Header: FC = () => {
   return (
