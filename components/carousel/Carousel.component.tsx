@@ -28,13 +28,13 @@ const Carousel: FC<
         autoplay={{delay: 0, disableOnInteraction: false}}
         breakpoints={{
           0: {
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           640: {
             slidesPerView: 2,
           },
           1024: {
-            slidesPerView: 7,
+            slidesPerView: 5,
           },
         }}
         className={`w-full ${className}`}
