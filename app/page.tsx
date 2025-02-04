@@ -1,26 +1,9 @@
 "use client"
-import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import colors from "@/config/colors";
-import DotedShape from "../components/doted-shape";
-import { Button } from "@/components/ui/button";
-import ArrowShape from "@/components/arrow-shape";
-import Carousel from "@/components/carousel";
+
+import HeroSection from "@/components/layout/HeroSection/HeroSection.component";
 
 export default function Home() {
-  return (
-    <Stack
-      flexDir="column" justifyContent="space-between"
-      color="bg.inverted"
-      as="main"
-      flex={1}
-      pos="relative"
-    >
-      {renderHeading()}
-      <Stack gap={0} as="section">
-        <Carousel className="h-[400px]"/>
-      </Stack>
-    </Stack>
-  );
+  return (<HeroSection/>);
 
   function renderHeading() {
     return (
