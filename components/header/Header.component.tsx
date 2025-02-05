@@ -18,8 +18,11 @@ const Header: FC = () => {
       color="bg.inverted"
     >
       <Flex gap={6} alignItems="center">
-        <FaGraduationCap className="h-[56px] w-[56px]"/>
-        <Heading fontSize="3xl" fontWeight="bold">
+        <FaGraduationCap className="h-[56px] w-[56px] hover:text-accent cursor-pointer"/>
+        <Heading
+          _hover={{color: colors.accent}} cursor="pointer"
+          fontSize="3xl" fontWeight="bold"
+        >
           المُجِد
         </Heading>
       </Flex>
@@ -38,9 +41,9 @@ const Header: FC = () => {
         {renderMenuLink("تواصل معنا", "/")}
       </Flex>
       <Flex alignItems="center" gap={8}>
-        <MdGTranslate size="30"/>
-        <IoMdSearch size="30"/>
-        <ColorModeButton/>
+        <MdGTranslate className="hover:text-accent cursor-pointer hover:scale-110" size="30"/>
+        <IoMdSearch className="hover:text-accent cursor-pointer hover:scale-110" size="30"/>
+        <ColorModeButton className="hover:text-accent cursor-pointer hover:scale-110"/>
         <Button
           mdDown={{display: "none"}}
           rounded="16px"
