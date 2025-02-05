@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdGTranslate } from "react-icons/md";
+import { IoMdSearch } from "react-icons/io";
 import { ColorModeButton } from "@/components/ui/color-mode";
 import colors from "@/config/colors";
 
@@ -38,6 +39,7 @@ const Header: FC = () => {
       </Flex>
       <Flex alignItems="center" gap={8}>
         <MdGTranslate size="30"/>
+        <IoMdSearch size="30"/>
         <ColorModeButton/>
         <Button
           mdDown={{display: "none"}}
