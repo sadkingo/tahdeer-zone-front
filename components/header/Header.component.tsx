@@ -54,7 +54,7 @@ const Header: FC = () => {
         >
           <Text>سجل الآن</Text>
         </Button>
-        <RxHamburgerMenu className="lg:hidden flex w-12 h-12"/>
+        <RxHamburgerMenu className="lg:hidden flex w-12 h-12 hover:text-accent cursor-pointer hover:scale-110"/>
       </Flex>
     </Flex>
   )
