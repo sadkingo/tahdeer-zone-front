@@ -48,7 +48,7 @@ const Header: FC = () => {
           mdDown={{display: "none"}}
           rounded="16px"
           px="40px" py="30px"
-          bg={colors.accent}
+          bg={{_hover: "gold", base: colors.accent}}
           fontWeight="bold" color="black" fontSize="20px"
           lgDown={{display: "none"}}
         >

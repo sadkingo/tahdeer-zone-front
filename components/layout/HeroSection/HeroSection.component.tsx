@@ -50,7 +50,7 @@ const HeroSection: FC = () => {
                 lg={{display: 'none'}}
                 rounded="16px"
                 px="40px" py="30px" mt={8}
-                bg={colors.accent}
+                bg={{_hover: "gold", base: colors.accent}}
                 fontWeight="bold" color="black" fontSize="20px"
               >
                 <Text>التسجيل</Text>
