@@ -8,7 +8,7 @@ const HeroSection: FC = () => {
   return (
     <Stack
       as="main"
-      maxH="dvh"
+      minH="dvh"
       flexDir="column" justifyContent="space-between"
       overflow="hidden"
       color="bg.inverted"
