@@ -5,7 +5,7 @@ import { Cairo } from "next/font/google";
 import { Provider } from "@/components/ui/provider";
 import Header from "../components/header";
 import { Toaster } from "@/components/ui/toaster";
-import { Flex } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -33,14 +33,14 @@ export default function RootLayout({children}: Readonly<{
        `}
     >
     <Provider>
-      <Flex
+      <Stack
         as="main"
         minH="dvh"
       >
         <Header/>
         {children}
         <Toaster/>
-      </Flex>
+      </Stack>
     </Provider>
     </body>
     </html>
