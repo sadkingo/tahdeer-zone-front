@@ -7,7 +7,7 @@ import colors from "@/config/colors";
 const HeroSection: FC = () => {
   return (
     <Stack
-      as="main"
+      as="section"
       minH="dvh"
       flexDir="column" justifyContent="space-between"
       overflow="hidden"
