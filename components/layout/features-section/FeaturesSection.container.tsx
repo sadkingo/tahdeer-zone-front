@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Features from "./Features.component";
+import Features from "./FeaturesSection.component";
 
 const FeaturesContainer: FC = () => {
   return (
