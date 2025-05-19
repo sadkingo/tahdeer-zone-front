@@ -12,7 +12,7 @@ const Header: FC = () => {
   return (
     <Flex
       pos="absolute" top="0" left="0" right="0" zIndex={99}
-      px={{base: "80px", mdDown: "30px"}} py="56px"
+      px={{base: "80px", mdDown: "30px"}} py="36px"
       justifyContent="space-between"
       alignItems="center"
       color="bg.inverted"
@@ -28,7 +28,11 @@ const Header: FC = () => {
       </Flex>
       {/* TODO: create paths and change to next js link*/}
       <Flex
-        pos="absolute" left="50%" transform="translateX(-50%)"
+        mdDown={{
+          pos: "absolute",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
         transition="all"
         fontSize="24px"
         gap="40px"
