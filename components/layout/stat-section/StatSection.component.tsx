@@ -36,7 +36,7 @@ const StatSection: FC = () => {
           w: "xs",
         }}
         w="full">
-        <Flex
+        <Stack
           justifyContent="center"
           alignItems="center"
           w="full"
@@ -45,6 +45,7 @@ const StatSection: FC = () => {
           p={8}
           rounded="xl"
           color={colors.accent}
+          shadow="xl"
         >
           <Text fontWeight="bold" fontSize="4xl">4.8</Text>
           <Flex>
@@ -54,14 +55,20 @@ const StatSection: FC = () => {
             <FaStar className="w-8 h-8"/>
             <FaRegStarHalfStroke className="w-8 h-8"/>
           </Flex>
-        </Flex>
+        </Stack>
       </Flex>
     </Stack>
   )
 
   function renderStat(title: string, stat: string) {
     return (
-      <Box flex={1} bg="bg.panel" p={8} rounded="xl">
+      <Box
+        flex={1}
+        bg="bg.panel"
+        p={8}
+        shadow="xl"
+        rounded="xl"
+      >
         <Heading
           mb={2}
           fontSize="3xl"
