@@ -1,20 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
+import { Alexandria } from "next/font/google";
 
 import { Provider } from "@/components/ui/provider";
-import Header from "../components/header";
+import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 import { Stack } from "@chakra-ui/react";
 
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["latin"],
+const alexandria = Alexandria({
+  variable: "--font-Alexandria",
+  weight: ["300", "400", "700", "800"],
+  subsets: ["arabic"],
 })
 
 // TODO: add social-media support
 export const metadata: Metadata = {
-  title: "Tahdeer Zone",
+  title: "AlMojid",
   description: "دروس ملخصات امتحانات بسهولة",
 };
 
@@ -24,7 +25,7 @@ export default function RootLayout({children}: Readonly<{
   return (
     <html lang="en" dir="rtl" suppressHydrationWarning>
     <body
-      className={`${cairo.variable}
+      className={`${alexandria.variable}
        antialiased
        flex flex-col
        min-h-screen w-full
