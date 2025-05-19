@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Button } from "@/components/ui/button";
 
-const SocialMediaButton: FC<{ children: React.ReactNode }> = ({children}) => {
+const SocialMediaButton: FC<{ children?: React.ReactNode }> = ({children}) => {
   return (
     <Button
       _dark={{borderColor: "gray.600"}}
