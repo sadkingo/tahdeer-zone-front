@@ -1,4 +1,4 @@
-import { Button, Grid, Heading, Stack, List, Box, Text, Flex } from "@chakra-ui/react";
+import { Button, Grid, Heading, Stack, List, Box, Flex } from "@chakra-ui/react";
 import BackGroundShape from "@/components/background-shape";
 
 export default function Dashboard() {
