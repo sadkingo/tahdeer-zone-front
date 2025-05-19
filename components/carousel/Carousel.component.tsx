@@ -37,7 +37,7 @@ const Carousel: FC<
             slidesPerView: 5,
           },
         }}
-        className={`w-full ${className} mt-36`}
+        className={`w-full ${className} `}
       >
         {carouselImages.map((image, index) =>
           <SwiperSlide className="min-w-52 min-h-52" key={index}>
