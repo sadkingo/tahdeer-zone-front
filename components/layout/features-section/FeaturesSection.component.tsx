@@ -28,9 +28,7 @@ const FeaturesSection: FC = () => {
       >
         <Stack
           justifyContent="center"
-          shadow="xl"
           rounded="lg"
-          bg="bg.panel"
           p={16}
           fontSize={28} fontWeight="bold"
           mdDown={{
@@ -44,12 +42,10 @@ const FeaturesSection: FC = () => {
         </Stack>
         <Stack
           mdDown={{px: 8}}
-          shadow="xl"
           rounded="lg"
-          bg="bg.panel"
-          p={8}
-          px={{base: 24, mdDown: 8}}
+          px={{base: 24, mdDown: 8}} p={8}
           fontSize={28}
+          gap={6}
           justifyContent="center"
         >
           <Flex gap={4} alignItems="center">
@@ -68,7 +64,6 @@ const FeaturesSection: FC = () => {
             <FaCheckCircle color="lightgreen" className="text-green-400"/>
             <Text>ملخصات ومراجعات سهلة وسريعة</Text>
           </Flex>
-
         </Stack>
       </Flex>
     </Flex>
